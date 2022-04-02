@@ -1,11 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="container">
-        <h1>auth</h1>
-    </div>
+    <Router>
+      <div className="container">
+        navbar...
+        <Routes>
+          <Route path="/" element={<div>Inicio... </div>} />
+          <Route path="/login" element={<div>Login... </div>} />
+          <Route path="/admin" element={<div>Admin... </div>} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
