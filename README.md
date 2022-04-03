@@ -15,3 +15,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 ![image](https://user-images.githubusercontent.com/45043430/161432480-9bafde16-6f13-4583-894a-8790296a7ed4.png)
 
+# alerta de firebase cuando ya existe un correo registrado 
+
+![image](https://user-images.githubusercontent.com/45043430/161432518-c75c365f-14d2-4775-9b33-75f62cd5ee36.png)
