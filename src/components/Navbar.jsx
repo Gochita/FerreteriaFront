@@ -6,7 +6,7 @@ const Navbar = () => {
     <div className="navbar navbar-dark bg-dark">
       <Link className="navbar-brand px-2" to="/">Ferreteria</Link>
           <div className="d-flex">
-              <NavLink className={"btn- btn-dark mr-2 active px-3"} to="/" exact >
+              <NavLink className={"btn- btn-dark mr-2 active px-3"} to="/" >
                   Inicio
               </NavLink>
               <NavLink className={"btn- btn-dark mr-2 px-3" } to="/admin">

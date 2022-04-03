@@ -6,17 +6,14 @@ import Login from "./components/Login";
 function App() {
   return (
     <Router>
-      
       <div className="container">
-        <Navbar/>
+        <Navbar />
         <Routes>
-          <Route path="/" element={"Inicio..."} />
-          <Route path="/login" element={ <Login />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/admin" element={<div>Admin... </div>} />
+          <Route path="/" element={"Inicio..."} />
         </Routes>
       </div>
-     
-      
     </Router>
   );
 }
