@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Login from "./components/Login";
+import Admin from "./components/Admin";
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/login" element={<Login />} />
-          <Route path="/admin" element={<div>Admin... </div>} />
+          <Route path="/admin" element={<div><Admin /></div>} />
           <Route path="/" element={"Inicio..."} />
         </Routes>
       </div>
