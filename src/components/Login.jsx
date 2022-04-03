@@ -1,10 +1,18 @@
 import React from "react";
+import fire from "../firebase";
+import {
+    getAuth,
+    createUserWithEmailAndPassword,
+  } from "firebase/auth";
+  
+  const auth = getAuth(fire)
 
 const Login = () => {
 
     const [email,setEmail] = React.useState('')
     const [password,setPassword] = React.useState('')
     const [error,setError]= React.useState(null)
+    const [registro, setRegistro] = React.useState(true)
 
     const procesarDatos =e =>{
         e.preventDefault();
@@ -24,11 +32,34 @@ const Login = () => {
             return
         }
         setError(null)
-        console.log('all validations passed')
-    }
+        
+         if(registro){
+            registrar()
+          }
+  
+    };
+    const registrar = React.useCallback(
+        async() => {
+          try {
+            await createUserWithEmailAndPassword(auth ,email, password)
+          } catch (error) {
+            console.log(error);
+            setError(error.message)
+          }
+        },
+        [email, password],
+      )
+            
+
+
   return (
     <div className="mt-5">
-      <h3 className="text-center">Registrate</h3>
+      <h3 className="text-center">{
+      
+      registro?'Registrate' :'Ingresa'
+
+
+      }</h3>
       <hr />
       <div className="row justify-content-center">
         <div className="col-12 col-sm-8 col-md-6 col-xl-4">
@@ -53,13 +84,13 @@ const Login = () => {
               onChange={e => setPassword(e.target.value)}
               value={password}
             />
-            <div className="d-flex flex-column">
+            <div className="pagination gap-2 d-md-flex justify-content-center">
               <button className="btn btn-lg btn-dark btn-block mb-3" type="submit">
-                Ingresar
+               {registro ? 'Registrate' : 'Ingresa'} 
               </button>
 
-              <button className="btn btn-sm btn-info btn-block" type="button">
-                ¿No tienes cuenta?
+              <button className="btn btn-sm btn-info btn-block"  onClick={() => setRegistro(!registro)} type="button">
+                {registro? "Ya tienes cuenta?" : "No tienes cuenta?"}
               </button>
             </div>
           </form>
@@ -67,6 +98,7 @@ const Login = () => {
       </div>
     </div>
   );
-};
+        }
 
 export default Login;
+        
