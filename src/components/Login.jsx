@@ -1,13 +1,14 @@
 import React from "react";
 import fire,{db} from "../firebase";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, } 
+import { getAuth, createUserWithEmailAndPassword,
+   signInWithEmailAndPassword, GoogleAuthProvider,signInWithPopup, } 
 from "firebase/auth";
 import { collection, addDoc, setDoc, doc } from "firebase/firestore";
 
 import { useNavigate } from "react-router-dom";
 
 const auth = getAuth(fire);
-
+const googleAuth = new GoogleAuthProvider();
 const Login = () => {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
@@ -64,6 +65,20 @@ const login = React.useCallback(async() =>{
 },[email,password, navigate]);
 
 
+const SignInGoogle = async () => {
+  await signInWithPopup(auth, googleAuth)
+    .then(async (result) => {
+      await setDoc(doc(db, "usuarios", "google"), {
+        email: result.user.email,
+        uid: result.user.uid,
+      });
+      navigate("/admin");
+    })
+    .catch((error) => {
+      console.log(error.code);
+      console.log(error.message);
+    });
+};
 
   const registrar = React.useCallback(async () => {
 
@@ -130,6 +145,18 @@ const login = React.useCallback(async() =>{
               </button>
             </div>
           </form>
+          <hr />
+          <div className="row justify-content-center">
+            <button
+              className="btn btn-dark btn-sm mt-2 mb-2"
+              type="button"
+              style={{ margin: "0 auto" }}
+              onClick={SignInGoogle}
+            >
+              <i className="fa-brands fa-google me-2 "></i>
+              Accede con Google
+            </button>
+            </div>    
         </div>
       </div>
     </div>
