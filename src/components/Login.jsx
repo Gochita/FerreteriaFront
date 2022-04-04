@@ -162,22 +162,22 @@ const SignInGoogle = async () => {
             </div>
           </form>
           <hr />
-          <div className="row justify-content-center">
+          <div className="container">
+
             <button
-              className="btn btn-dark btn-sm mt-2 mb-2"
+              className="btn btn-sm btn-outline-dark btn-block mb-3"
               type="button"
               onClick={SignInGoogle}
             >
-              <i className="fa-brands fa-google me-2 "></i>
-              Google
+           <i className="fa-brands fa-google"></i>
             </button>
             <button
-              className="btn btn-dark btn-sm  "
+              className="btn btn-sm btn-outline-dark btn-block mb-3"
               type="button"
               onClick={SignInGitHub}
             >
-              <i className="fa-brands fa-github-alt me-2"></i>
-              GitHub
+          <i className="fa-brands fa-github"></i>
+              
             </button>
             </div>    
         </div>
