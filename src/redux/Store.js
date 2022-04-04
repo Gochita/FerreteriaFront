@@ -4,10 +4,12 @@ import {composeWithDevTools} from 'redux-devtools-extension'
  
 import cliReducer from './ClienteDucks'
 import vendReducer from './ClienteDucks'
+import factReducer from './FacturaDucks'
  
 const rootReducer = combineReducers({
     clientes: cliReducer,
-    vendedores: vendReducer
+    vendedores: vendReducer,
+    facturas: factReducer,
 })
  
 export default function generateStore() {
