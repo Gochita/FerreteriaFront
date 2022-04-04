@@ -21,3 +21,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 # estilos mejorados
 ![image](https://user-images.githubusercontent.com/45043430/161472554-dbc0f62e-976f-4423-b52f-b955037d6de0.png)
+
+# link de youtube 
+https://youtu.be/GA19wcB3JQI
