@@ -5,11 +5,13 @@ import {composeWithDevTools} from 'redux-devtools-extension'
 import cliReducer from './ClienteDucks'
 import vendReducer from './VendedorDucks'
 import factReducer from './FacturaDucks'
+import prodReducer from './ProductoDucks'
  
 const rootReducer = combineReducers({
     clientes: cliReducer,
     vendedores: vendReducer,
     facturas: factReducer,
+    productos: prodReducer,
 })
  
 export default function generateStore() {

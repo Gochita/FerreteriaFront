@@ -8,7 +8,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { traerClientesAccion } from "../redux/ClienteDucks";
 import {traerVendedoresAccion} from "../redux/VendedorDucks";
 import { traerFacturasAccion } from "../redux/FacturaDucks";
+import { traerProductosAccion } from "../redux/ProductoDucks";
+
 import Facturas from "./Facturas";
+import Productos from "./Productos";
 
 const auth = getAuth(fire);
 
@@ -21,6 +24,7 @@ const Admin = () => {
   const clientes = useSelector((store) => store.clientes.array);
   const vendedores= useSelector((store) => store.vendedores.array );
   const facturas= useSelector((store)=> store.facturas.array);
+  const productos= useSelector((store)=> store.productos.array);
   const handlerCliente = () => {
     navigate("/admin/clientes");
     dispatch(traerClientesAccion());
@@ -32,6 +36,10 @@ const Admin = () => {
   const handlerFacturas = () => {
     navigate("/admin/facturas");
     dispatch(traerFacturasAccion());
+  };
+  const handlerProductos = () => {
+    navigate("/admin/productos");
+    dispatch(traerProductosAccion());
   };
 
   React.useEffect(() => {
@@ -72,10 +80,19 @@ const Admin = () => {
       >
         Facturas
       </button>
+      <button
+        className="btn btn-dark btn-sm  "
+        type="button"
+        style={{ margin: "0 auto" }}
+        onClick={handlerProductos}
+      >
+        Productos
+      </button>
       <Routes>
         <Route path="/clientes" element={<Clientes />} />
         <Route path="/vendedores" element={<Vendedor/>}/>
         <Route path="/facturas" element={<Facturas/>}/>
+        <Route path="/productos" element={<Productos/>}/>
       </Routes>
     </div>
   );
