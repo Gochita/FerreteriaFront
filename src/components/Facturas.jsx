@@ -1,7 +1,10 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import {imprimir} from "../pdf/pdf";
 const Facturas = () => {
-   
+  const handlerImprimir = (item) => {
+    imprimir(item);
+  };
   const facturas = useSelector((store) => store.facturas.array);
   return (
     <div>
@@ -25,6 +28,13 @@ const Facturas = () => {
                   <p>Total a pagar:{item.totalPagar}</p>
                   <p>Fecha: {item.fechaFactura}</p>
                   <p> Vendedor: {item.nombreVendedor}</p>
+                  <button
+                  type="button"
+                  className="btn btn-dark btn-lg page"
+                  onClick={() => handlerImprimir(item)}
+                >
+                  Imprimir
+                </button>
                 </div>
               </div>
             </div>

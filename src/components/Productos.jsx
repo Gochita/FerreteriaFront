@@ -15,6 +15,7 @@ const Productos = () => {
                     <div className="card-body">
                       <h5>{item.nombreProducto}</h5>
                       <p>Precio: {item.precioProducto}</p>
+                      <p>Identificador Proveedor: {item.idProveedor}</p>
                       <p>Stock: {item.stock}</p>
                     </div>
                   </div>
