@@ -1,7 +1,7 @@
 import React from "react";
 import fire,{db} from "../firebase";
 import { getAuth, createUserWithEmailAndPassword,
-   signInWithEmailAndPassword, GoogleAuthProvider,signInWithPopup, } 
+   signInWithEmailAndPassword, GoogleAuthProvider,signInWithPopup,GithubAuthProvider, } 
 from "firebase/auth";
 import { collection, addDoc, setDoc, doc } from "firebase/firestore";
 
@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 
 const auth = getAuth(fire);
 const googleAuth = new GoogleAuthProvider();
+const githubAuth = new GithubAuthProvider();
 const Login = () => {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
@@ -64,6 +65,21 @@ const login = React.useCallback(async() =>{
   }
 },[email,password, navigate]);
 
+const SignInGitHub = async () => {
+  await signInWithPopup(auth, githubAuth)
+    .then(async (result) => {
+      console.log(result);
+      await setDoc(doc(db, "usuarios", "github"), {
+        email: result.user.email,
+        uid: result.user.uid,
+      });
+      navigate("/admin");
+    })
+    .catch((error) => {
+      console.log(error.code);
+      console.log(error.message);
+    });
+};
 
 const SignInGoogle = async () => {
   await signInWithPopup(auth, googleAuth)
@@ -150,11 +166,18 @@ const SignInGoogle = async () => {
             <button
               className="btn btn-dark btn-sm mt-2 mb-2"
               type="button"
-              style={{ margin: "0 auto" }}
               onClick={SignInGoogle}
             >
               <i className="fa-brands fa-google me-2 "></i>
-              Accede con Google
+              Google
+            </button>
+            <button
+              className="btn btn-dark btn-sm  "
+              type="button"
+              onClick={SignInGitHub}
+            >
+              <i className="fa-brands fa-github-alt me-2"></i>
+              GitHub
             </button>
             </div>    
         </div>
