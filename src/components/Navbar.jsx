@@ -18,7 +18,7 @@ const Navbar = (props) => {
       <nav className="navbar navbar-dark bg-dark">
         <div className="container">
           <Link className="navbar-brand " to="/">
-            Ferreteria Don Raul
+            Ferreteria
           </Link>
           <div>
             <div className="d-flex">

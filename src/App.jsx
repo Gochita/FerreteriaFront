@@ -5,6 +5,7 @@ import Login from "./components/Login";
 import Admin from "./components/Admin";
 import fire from "./firebase";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
+import "./style/coolstuff.scss";
 
 function App() {
   const auth = getAuth(fire);
@@ -21,7 +22,7 @@ function App() {
   }, []);
   return firebaseUser !== false ? (
     <Router>
-      <div className="container">
+      <div className="container page">
         <Navbar firebaseUser={firebaseUser} />
         <br />
         <Routes>
