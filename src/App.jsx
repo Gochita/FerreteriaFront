@@ -39,7 +39,7 @@ function App() {
         role="status"
         aria-hidden="true"
       ></span>
-      Loading...
+      Cargando..
     </button>
   );
 }
