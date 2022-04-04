@@ -3,9 +3,11 @@ import thunk from 'redux-thunk'
 import {composeWithDevTools} from 'redux-devtools-extension'
  
 import cliReducer from './ClienteDucks'
+import vendReducer from './ClienteDucks'
  
 const rootReducer = combineReducers({
-    clientes: cliReducer
+    clientes: cliReducer,
+    vendedores: vendReducer
 })
  
 export default function generateStore() {
