@@ -114,14 +114,15 @@ const login = React.useCallback(async() =>{
             />
             <div className="pagination gap-2 d-md-flex justify-content-center">
               <button
-                className="btn btn-lg btn-dark btn-block mb-3"
+                // className="btn btn-sm btn-dark btn-block mb-3"
+                className="btn btn-sm btn-outline-dark btn-block mb-3"
                 type="submit"
               >
                 {registro ? "Registrate" : "Ingresa"}
               </button>
 
               <button
-                className="btn btn-sm btn-info btn-block"
+                className="btn btn-sm btn-outline-danger btn-block mb-3"
                 onClick={() => setRegistro(!registro)}
                 type="button"
               >
