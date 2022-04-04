@@ -18,7 +18,7 @@ export default function cliReducer (state = initialData, action) {
 
 export const traerClientesAccion = () => async (dispatch, getState) => {
     try {
-        const response = await fetch (`https://ferreteriabacksofka.herokuapp.com/listarClientes`)
+        const response = await fetch (`https://ferreteriasofkadonraul.herokuapp.com/listarClientes`)
         const contenido = await response.json();
         dispatch({
             type : TRAER_CLIENTES_SUCCESS,
