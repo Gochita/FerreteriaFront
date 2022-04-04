@@ -1,12 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Ubuntu+Condensed&display=swap');
-
+*{
+  //background-color: #efba9b;
+}
 $color-fondo: #efba9b;
+
+.navbar{
+  background-color: rgb(23, 22, 22);
+}
 .page {
     background-color: $color-fondo;
     width: 100%;
     font-size: 8px;
   }
-
+.navbar navbar-dark bg-dark{
+  background-color: rgb(0, 0, 0)
+}
   .card {
   
     h5 {

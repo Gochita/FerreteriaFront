@@ -14,7 +14,7 @@ const Clientes = () => {
       <div className="container">
         <div className="row">
           {clientes.map((item) => (
-            <div key={item.id} className="col-md-4 mb-2">
+            <div key={item.idCliente} className="col-md-4 mb-2">
               <div className="card">
                 <div className="card-body">
                   <h5>{item.nombreCliente}</h5>

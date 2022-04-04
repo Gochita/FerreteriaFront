@@ -6,6 +6,7 @@ import Admin from "./components/Admin";
 import fire from "./firebase";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import "./style/coolstuff.scss";
+import inicio from "./img/ferreteria.jpg";
 
 function App() {
   const auth = getAuth(fire);
@@ -26,7 +27,22 @@ function App() {
         <Navbar firebaseUser={firebaseUser} />
         <br />
         <Routes>
-          <Route path="/" element={<div>Inicio... </div>} />
+          <Route
+            path="/"
+            element={
+              <div>
+                <div>
+                  <center>
+                    <br />
+                    <img src={inicio} className="ImagenInicial" alt="Logo" />
+                    <div className="App">
+                      <div className="centrado"></div>
+                    </div>
+                  </center>
+                </div>
+              </div>
+            }
+          />
           <Route path="/login" element={<Login />} />
           <Route path="/admin/*" element={<Admin />} />
           <Route path="*" element={<h1>404 NotFoundPage</h1>} />

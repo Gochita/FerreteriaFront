@@ -3,7 +3,7 @@ import thunk from 'redux-thunk'
 import {composeWithDevTools} from 'redux-devtools-extension'
  
 import cliReducer from './ClienteDucks'
-import vendReducer from './ClienteDucks'
+import vendReducer from './VendedorDucks'
 import factReducer from './FacturaDucks'
  
 const rootReducer = combineReducers({

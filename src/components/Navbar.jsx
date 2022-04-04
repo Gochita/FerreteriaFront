@@ -15,7 +15,8 @@ const Navbar = (props) => {
 
   return (
 <main>
-      <nav className="navbar navbar-dark bg-dark">
+      <nav className="navbar navbar-dark bg-dark"> 
+      {/* <nav className="navbar"> */}
         <div className="container">
           <Link className="navbar-brand " to="/">
             Ferreteria

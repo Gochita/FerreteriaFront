@@ -11,7 +11,7 @@ const Vendedor = () => {
         <div className="container">
           <div className="row">
             {vendedores.map((item) => (
-              <div key={item.id} className="col-md-4 mb-2">
+              <div key={item.idVendedor} className="col-md-4 mb-2">
                 <div className="card">
                   <div className="card-body">
                     <h5>{item.nombreVendedor}</h5>
@@ -24,7 +24,7 @@ const Vendedor = () => {
           </div>
         </div>
       </div>
-      );
+    
     </div>
   );
 };
